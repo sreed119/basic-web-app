@@ -22,5 +22,17 @@ export default function QueryProcessor(query: string): string {
     return (parseInt(num1) + parseInt(num2)).toString();
   }
 
+  if (query.toLowerCase().includes("largest:")) {
+    const nums = query.split("largest: ")[1].split(", ");
+    let largest = parseInt(nums[0]);
+    for (let i = 1; i < nums.length; i++) {
+      const num = parseInt(nums[i]);
+      if (num > largest) {
+        largest = num;
+      }
+    }
+    return largest.toString();
+  }
+
   return "";
 }
