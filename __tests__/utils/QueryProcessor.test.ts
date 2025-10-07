@@ -22,7 +22,7 @@ describe("QueryProcessor", () => {
         const query = "What is your name?";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
-            "Rohan"
+            "sreed2"
           ));
     });
 
@@ -30,7 +30,23 @@ describe("QueryProcessor", () => {
         const query = "What is your andrew id?";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
-            "sreed2 <3"
+            "sreed2"
           ));
     })
+
+    test('should return sum of two numbers', () => {
+        const query = "What is 5 plus 3?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "8"
+          ));
+    });
+
+    test('should return largest number', () => {
+        const query = "Which of the following numbers is the largest: 5, 10, 3?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "10"
+          ));
+    });
 });
